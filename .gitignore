@@ -299,10 +299,7 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
-*.pdf
+# the built poster; PDFs in subfolders (figures, logos) stay tracked
+/*.pdf
 .idea/
 out/
-
-# keep logo assets (the *.pdf rule above would ignore them)
-!logos/*.pdf
-!logos/partners/*.pdf

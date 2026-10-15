@@ -15,6 +15,8 @@ The default layout is A0 portrait with two columns; landscape and other paper si
 2. Edit `poster_template.tex`: title, authors, institutes, footer, and the poster content.
 3. Run `latexmk` to build `poster_template.pdf`.
 
+PDFs in the top-level folder are git-ignored, because that is where the poster is built; keep PDF figures in a subfolder such as `figures/`.
+
 ### Paper size and columns
 
 Set the paper in the `beamerposter` line of `poster_template.tex`, e.g. `orientation=landscape` or `size=a1`. For N columns, choose `\sepwidth` and `\colwidth` such that (N+1)·`\sepwidth` + N·`\colwidth` = `\paperwidth`; for three columns, use `0.025\paperwidth` and `0.3\paperwidth`, and add a third `column` environment.
