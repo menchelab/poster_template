@@ -1,0 +1,13 @@
+build_pdf:
+  tags:
+    - wiener
+  image: hirsche/latex
+  script:
+    - latexmk
+    # - lualatex goals
+    # - bibtex goals
+    # - lualatex goals
+    # - lualatex goals
+  artifacts:
+    paths:
+      - ./*.pdf
