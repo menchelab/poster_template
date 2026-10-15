@@ -1,7 +1,9 @@
-% Unofficial University of Cambridge Poster Template
-% https://github.com/andiac/gemini-cam
-% a fork of https://github.com/anishathalye/gemini
-% also refer to https://github.com/k4rtik/uchicago-poster
+% LBI Network Medicine Poster Template
+% Ludwig Boltzmann Institute for Network Medicine at the University of Vienna
+% https://netmed.lbg.ac.at/
+%
+% Based on the JRC ISIA poster template, a fork of the Gemini theme
+% https://github.com/anishathalye/gemini
 
 \documentclass[final]{beamer}
 
@@ -41,13 +43,13 @@
 % Title
 % ====================
 
-\title{Some fancy title: followed by some more text}
+\title{Disease modules in the human interactome}
 
-\author{Martin Uray \inst{1} \and Barbara Giunti \inst{2} \and Stefan Huber \inst{1} \and Michael Kerber \inst{1}}
+\author{Jane Doe \inst{1} \and John Roe \inst{1,2} \and Alex Poe \inst{2}}
 
-\institute[shortinst]{\inst{1} Josef Ressel Centre for Intelligent and Secure Industrial Automation,\\Salzburg University of Applied Sciences, Salzburg, Austria
+\institute[shortinst]{\inst{1} Ludwig Boltzmann Institute for Network Medicine at the University of Vienna, Vienna, Austria
 \and
-\inst{2} Institute of Geometry, Graz University of Technology, Graz, Austria}
+\inst{2} CeMM Research Center for Molecular Medicine of the Austrian Academy of Sciences, Vienna, Austria}
 
 % ====================
 % Footer (optional)
@@ -65,12 +67,11 @@
     \includegraphics[height=3.6cm]{logos/partners/vbc}\hspace{4ex}%
     \includegraphics[height=3.2cm]{logos/partners/cemm}}
 
-
 % ====================
 % Logo (optional)
 % ====================
 
-% use this to include logos on the left and/or right side of the header:
+% institute logo, left of the title
 \logoleft{\includegraphics[height=9cm]{logos/lbi-netmed}}
 % optional second logo, right of the title:
 % \logoright{\includegraphics[height=7cm]{logos/...}}
@@ -80,16 +81,6 @@
 % ====================
 
 \begin{document}
-
-% Refer to https://github.com/k4rtik/uchicago-poster
-% logo: https://www.cam.ac.uk/brand-resources/about-the-logo/logo-downloads
-% \addtobeamertemplate{headline}{}
-% {
-%     \begin{tikzpicture}[remember picture,overlay]
-%       \node [anchor=north west, inner sep=3cm] at ([xshift=-2.5cm,yshift=1.75cm]current page.north west)
-%       {\includegraphics[height=7cm]{logos/unott-logo.eps}};
-%     \end{tikzpicture}
-% }
 
     \begin{frame}[t]
         \begin{columns}[t]
@@ -103,12 +94,28 @@
 
                     \begin{figure}
                         \centering
-                        \begin{tikzpicture}[scale=6]
-                            \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
-                            \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
-                            -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
+                        \begin{tikzpicture}[x=1.5cm, y=1.5cm]
+                            % proteins of the interactome and of the disease module
+                            \foreach \p/\x/\y in {a/0.5/1.0, b/2.0/0.3, c/1.6/2.4, d/3.4/1.6,
+                                e/0.8/3.6, f/2.9/4.0, g/4.6/0.4, n/6.0/5.0, o/9.8/0.5,
+                                h/13.0/0.6, i/14.8/1.8, j/13.8/3.8, k/15.4/4.6, l/11.6/4.8,
+                                m1/7.0/2.0, m2/8.2/3.4, m3/9.6/2.8, m4/8.6/1.4,
+                                m5/10.6/4.0, m6/6.6/3.6, m7/10.4/1.6, m8/9.2/4.6}
+                                \coordinate (\p) at (\x,\y);
+                            % interactions
+                            \foreach \na/\nb in {a/b, a/c, b/d, c/d, c/e, e/f, f/d, d/g,
+                                b/g, g/o, o/h, h/i, i/j, j/k, j/l, l/k, f/n, h/j,
+                                d/m6, g/m1, o/m7, l/m5, n/m8}
+                                \draw[lbimauve, line width=2pt] (\na) -- (\nb);
+                            \foreach \na/\nb in {m1/m2, m1/m4, m2/m3, m3/m4, m2/m6, m6/m1,
+                                m3/m5, m5/m8, m8/m2, m3/m7, m7/m4}
+                                \draw[lbiblue, line width=4pt] (\na) -- (\nb);
+                            \foreach \p in {a, b, c, d, e, f, g, n, o, h, i, j, k, l}
+                                \fill[lbimauve] (\p) circle (0.22);
+                            \foreach \p in {m1, m2, m3, m4, m5, m6, m7, m8}
+                                \fill[lbiblue] (\p) circle (0.28);
                         \end{tikzpicture}
-                        \caption{A figure caption.}
+                        \caption{A disease module (blue) within the protein interaction network.}
                     \end{figure}
 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
@@ -244,15 +251,14 @@
                                 axis lines=center,
                                 axis line style={-},
                                 ticks=none]
-                                \addplot[red!50] {sin(deg(x))};
-                                \addplot[blue!50] {cos(deg(x))};
+                                \addplot[lbiblue, very thick] {sin(deg(x))};
+                                \addplot[lbimauve, very thick] {cos(deg(x))};
                             \end{axis}
                         \end{tikzpicture}
                         \caption{Another figure caption.}
                     \end{figure}
 
                 \end{block}
-
 
                 \begin{exampleblock}{A highlighted block containing some math}
 
