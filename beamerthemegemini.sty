@@ -247,20 +247,44 @@
 }
 
 % Footer
+% \footercontent{...} sets the footer text and \footerlogos{...} the logos
+% shown right-aligned next to it; both are optional.
 \newcommand{\footercontent}[1]{\newcommand{\insertfootercontent}{#1}}
+\newcommand{\footerlogos}[1]{\newcommand{\insertfooterlogos}{#1}}
+
+\newlength{\footerlogoswidth}
+\newlength{\footercontentwidth}
+\newif\ifgemini@footer
 
 \setbeamertemplate{footline}{
-  \ifdefined\insertfootercontent
+  \gemini@footerfalse
+  \ifdefined\insertfootercontent\gemini@footertrue\fi
+  \ifdefined\insertfooterlogos\gemini@footertrue\fi
+  \ifgemini@footer
   \begin{beamercolorbox}[vmode]{headline}
     \ifbeamercolorempty[bg]{headline rule}{}{
       \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{headline rule}\end{beamercolorbox}
     }
     \vspace{3ex}
-    \hspace{\sepwidth}
     \usebeamerfont{footline}
-    \centering
-    \insertfootercontent
-    \hspace{\sepwidth}
+    \ifdefined\insertfooterlogos
+      \settowidth{\footerlogoswidth}{\insertfooterlogos}%
+      \setlength{\footercontentwidth}{\paperwidth-3\sepwidth-\footerlogoswidth}%
+      \noindent\hspace*{\sepwidth}%
+      \ifdefined\insertfootercontent
+        \parbox[c]{\footercontentwidth}{\raggedright\insertfootercontent}%
+      \else
+        \hspace*{\footercontentwidth}% an empty \parbox would collapse to zero width
+      \fi
+      \hspace*{\sepwidth}%
+      \parbox[c]{\footerlogoswidth}{\insertfooterlogos}%
+      \par
+    \else
+      \hspace{\sepwidth}
+      \centering
+      \insertfootercontent
+      \hspace{\sepwidth}
+    \fi
     \vspace{3ex}
   \end{beamercolorbox}
   \else\fi
