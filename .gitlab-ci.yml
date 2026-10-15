@@ -1,13 +1,7 @@
 build_pdf:
-  tags:
-    - wiener
-  image: hirsche/latex
+  image: texlive/texlive:latest
   script:
     - latexmk
-    # - lualatex goals
-    # - bibtex goals
-    # - lualatex goals
-    # - lualatex goals
   artifacts:
     paths:
       - ./*.pdf

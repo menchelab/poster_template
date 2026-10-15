@@ -1,0 +1,61 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+%
+% Color theme for the Ludwig Boltzmann Institute for Network Medicine
+% at the University of Vienna (LBI-NetMed). Blue and mauve are the logo's
+% base colors (LBI_NetMed_EN_Basisfarben.svg); navy is the website's text color.
+
+\RequirePackage{xcolor}
+
+% ====================
+% Definitions
+% ====================
+
+\definecolor{lbiblue}{RGB}{0, 74, 153}     % #004A99 logo blue
+\definecolor{lbimauve}{RGB}{185, 174, 187} % #B9AEBB logo mauve
+\definecolor{lbinavy}{RGB}{0, 18, 66}      % #001242 text navy
+
+% ====================
+% Theme
+% ====================
+
+% Basic colors
+\setbeamercolor{normal text}{fg=lbinavy,bg=white}
+\setbeamercolor{palette primary}{fg=lbinavy,bg=white}
+\setbeamercolor{palette secondary}{fg=lbinavy,bg=white}
+\setbeamercolor{palette tertiary}{fg=white,bg=lbinavy}
+\setbeamercolor{palette quaternary}{fg=lbinavy,bg=white}
+\setbeamercolor{structure}{fg=lbiblue}
+
+% Headline
+\setbeamercolor{headline}{fg=lbinavy,bg=white}
+\setbeamercolor{headline institute}{fg=lbinavy!80}
+\setbeamercolor{headline rule}{bg=lbiblue}
+
+% Block
+\setbeamercolor{block title}{fg=lbinavy,bg=white}
+\setbeamercolor{block separator}{bg=lbiblue}
+\setbeamercolor{block body}{fg=lbinavy,bg=white}
+
+% Alert Block
+\setbeamercolor{block alerted title}{fg=white,bg=lbiblue}
+\setbeamercolor{block alerted separator}{bg=lbiblue}
+\setbeamercolor{block alerted body}{fg=lbinavy,bg=lbiblue!7}
+
+% Example Block
+\setbeamercolor{block example title}{fg=lbinavy,bg=lbimauve!60}
+\setbeamercolor{block example separator}{bg=lbimauve}
+\setbeamercolor{block example body}{fg=lbinavy,bg=lbimauve!18}
+
+% Heading
+\setbeamercolor{heading}{fg=lbiblue}
+
+% Itemize
+\setbeamercolor{item}{fg=lbiblue}
+
+% Bibliography
+\setbeamercolor{bibliography item}{fg=lbinavy}
+\setbeamercolor{bibliography entry author}{fg=lbinavy}
+\setbeamercolor{bibliography entry title}{fg=lbinavy}
+\setbeamercolor{bibliography entry location}{fg=lbinavy}
+\setbeamercolor{bibliography entry note}{fg=lbinavy}

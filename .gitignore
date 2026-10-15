@@ -302,3 +302,7 @@ TSWLatexianTemp*
 *.pdf
 .idea/
 out/
+
+# keep logo assets (the *.pdf rule above would ignore them)
+!logos/*.pdf
+!logos/partners/*.pdf

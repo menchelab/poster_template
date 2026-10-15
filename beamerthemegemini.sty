@@ -1,5 +1,9 @@
 % Gemini theme
 % https://github.com/anishathalye/gemini
+%
+% Modified for the LBI Network Medicine poster template: Source Serif/Sans Pro
+% fonts, left-aligned header next to the logo, left-aligned block titles,
+% triangle bullets, and a footer with optional partner logos.
 
 % ====================
 % Dependencies
@@ -15,26 +19,34 @@
 % Fonts
 % ====================
 
-\newfontfamily\Raleway[Ligatures=TeX]{Raleway}
-\newfontfamily\Lato[Ligatures=TeX]{Lato}
+\newfontfamily\SourceSerif{SourceSerifPro}[
+  Extension=.otf,
+  Ligatures=TeX,
+  UprightFont=*-Regular,
+  ItalicFont=*-RegularIt,
+  BoldFont=*-Semibold,
+  BoldItalicFont=*-SemiboldIt
+]
 
 \usefonttheme{professionalfonts}
 
-\setsansfont{Lato}[
-  UprightFont=*-Light,
-  ItalicFont=*-LightItalic,
-  BoldFont=*-Regular,
-  BoldItalicFont=*-Italic
+\setsansfont{SourceSansPro}[
+  Extension=.otf,
+  Ligatures=TeX,
+  UprightFont=*-Regular,
+  ItalicFont=*-RegularIt,
+  BoldFont=*-Semibold,
+  BoldItalicFont=*-SemiboldIt
 ]
 
-\setbeamerfont{headline}{family=\Raleway}
-\setbeamerfont{headline title}{size=\Huge,series=\bfseries}
+\setbeamerfont{headline}{family=\sffamily}
+\setbeamerfont{headline title}{family=\SourceSerif,size=\Huge,series=\bfseries}
 \setbeamerfont{headline author}{size=\Large}
 \setbeamerfont{headline institute}{size=\normalsize}
-\setbeamerfont{block title}{family=\Raleway,size=\large,series=\bfseries}
-\setbeamerfont{heading}{family=\Lato,series=\bfseries}
+\setbeamerfont{block title}{family=\SourceSerif,size=\large,series=\bfseries}
+\setbeamerfont{heading}{family=\sffamily,series=\bfseries}
 \setbeamerfont{caption}{size=\small}
-\setbeamerfont{footline}{family=\Raleway,size=\normalsize}
+\setbeamerfont{footline}{family=\sffamily,size=\normalsize}
 
 % ====================
 % Macros
