@@ -1,91 +1,62 @@
-# JRC ISIA Poster Template
-[![img](https://img.shields.io/badge/download-pdf-green)](https://git.isia.fh-salzburg.ac.at/publications/templates/isia-poster-template/-/jobs/artifacts/main/raw/poster_template.pdf?job=build_pdf)
+# LBI Network Medicine Poster Template
 
-This template is based on the Gemini modern LaTeX [beamerposter] theme. It can be used in portrait and landscape.
+LaTeX poster template for the [Ludwig Boltzmann Institute for Network Medicine at the University of Vienna](https://netmed.lbg.ac.at/) (LBI-NetMed). It is based on the [JRC ISIA poster template](https://git.isia.fh-salzburg.ac.at/publications/templates/isia-poster-template), a fork of the [Gemini](https://github.com/anishathalye/gemini) beamerposter theme.
 
-
-<p align="center">
-<a href="https://raw.githubusercontent.com/anishathalye/assets/master/gemini/poster-gemini.pdf">
-<img src="https://raw.githubusercontent.com/anishathalye/assets/master/gemini/poster-gemini-small.png">
-</a>
-</p>
-
-If you're looking for a beamer presentation theme, take a look at [Auriga].
+The default layout is A0 portrait with two columns; landscape and other paper sizes work too.
 
 ## Dependencies
 
-* A TeX installation that includes [LuaTeX]
-    * You also need `latexmk` if you want to use the provided `Makefile`
-* LaTeX package dependencies including beamerposter (these usually come with
-  your TeX installation, but if not, you can get them from [CTAN])
-* [Raleway] and [Lato], which are both available under Open Font License
+- A TeX installation with LuaLaTeX and `latexmk`, e.g. TeX Live 2025
+- The `beamerposter` package and the fonts Source Sans Pro and Source Serif Pro (all part of a full TeX Live installation)
 
 ## Usage
 
-1. Copy the files in this repository (or clone the repository)
-1. In `poster_template.tex`, set up your paper size, column layout, and scale the
-   content as necessary
-1. Make a copy of `beamercolorthemegemini.sty`, update the `\usecolortheme`
-   line in `poster_template.tex`, and theme the poster to your liking (optional, but
-   highly recommended)
-1. Run `latexmk` to build your poster
+1. Copy the files in this repository (or clone it).
+2. Edit `poster_template.tex`: title, authors, institutes, footer, and the poster content.
+3. Run `latexmk` to build `poster_template.pdf`.
 
-## Internal Maintainer
+### Paper size and columns
 
-- [Martin Uray](mailto:martin.uray@fh-salzburg.ac.at)
+Set the paper in the `beamerposter` line of `poster_template.tex`, e.g. `orientation=landscape` or `size=a1`. For N columns, choose `\sepwidth` and `\colwidth` such that (N+1)·`\sepwidth` + N·`\colwidth` = `\paperwidth`; for three columns, use `0.025\paperwidth` and `0.3\paperwidth`, and add a third `column` environment.
 
+### Header
 
-## Themes
+`\logoleft{...}` puts a logo to the left of the title block (the demo uses the LBI logo); `\logoright{...}` adds an optional logo on the right. Both take any content, typically `\includegraphics[height=...]{...}`. The title, authors, and institutes come from `\title`, `\author`, and `\institute`.
 
-Gemini currently includes three color themes:
+### Footer
 
-* `gemini` (default)
-* `mit`
-* `labsix`
+`\footercontent{...}` sets the footer text and `\footerlogos{...}` the partner logos shown right-aligned next to it. Both are optional; leave both out to remove the footer.
 
-The alternative themes are intended to be inspiration for you to make your own
-color theme. You're highly recommended to make your own color theme (it's
-really easy!) or use the default Gemini theme.
+```latex
+\footerlogos{%
+    \includegraphics[height=2.8cm]{logos/partners/univie}\hspace{4ex}%
+    \includegraphics[height=3.6cm]{logos/partners/vbc}\hspace{4ex}%
+    \includegraphics[height=3.2cm]{logos/partners/cemm}}
+```
 
-### MIT theme
+### Blocks and colors
 
-<p align="center">
-<a href="https://raw.githubusercontent.com/anishathalye/assets/master/gemini/poster-mit.pdf">
-<img src="https://raw.githubusercontent.com/anishathalye/assets/master/gemini/poster-mit-small.png">
-</a>
-</p>
+Use `block`, `alertblock` (blue), and `exampleblock` (mauve); `\heading{...}` adds a sub-heading inside a block. The color theme `beamercolorthemelbi.sty` defines `lbiblue` (#004A99), `lbimauve` (#B9AEBB), and `lbinavy` (#001242), which you can also use in figures, e.g. `\addplot[lbiblue]`.
 
-### LabSix theme
+## Logos
 
-<p align="center">
-<a href="https://raw.githubusercontent.com/anishathalye/assets/master/gemini/poster-labsix.pdf">
-<img src="https://raw.githubusercontent.com/anishathalye/assets/master/gemini/poster-labsix-small.png">
-</a>
-</p>
+All logos are vector PDFs converted from the official SVG files with Inkscape:
 
-## Design goals
+```
+inkscape --export-type=pdf --export-area-drawing --export-filename=<out>.pdf <in>.svg
+```
 
-* **Minimal**: clean and easy to read, so that the emphasis is on the content
-* **Batteries included**: works and looks good out of the box
-* **Easy theming**: easy to create and use a new color theme
+| File | Source |
+|---|---|
+| `logos/lbi-netmed.pdf` | LBI-NetMed logo `LBI_NetMed_EN_Basisfarben.svg` (netmed.lbg.ac.at) |
+| `logos/partners/univie.pdf` | University of Vienna logo `univie.svg` (univie.ac.at) |
+| `logos/partners/vbc.pdf` | Vienna BioCenter logo `VBC_LOGO_rgb.svg` (viennabiocenter.org → About → Downloads) |
+| `logos/partners/cemm.pdf` | CeMM logo `footer-logo.svg` (cemm.at) |
 
-## Contributing
+## Maintainer
 
-Contributions to Gemini such as bug reports, new themes, and new poster
-components are greatly appreciated! Given the subjective nature of design,
-you're encouraged to open an issue or pull request early to get feedback before
-investing a lot of time in implementing a new feature.
+- simon@lbi-netmed.com
 
 ## License
 
-Copyright (c) 2018-2022 Anish Athalye. Released under the MIT License. See
-[LICENSE.md][license] for details.
-
-[beamerposter]: https://github.com/deselaers/latex-beamerposter
-[Auriga]: https://github.com/anishathalye/auriga
-[LuaTeX]: http://www.luatex.org/
-[CTAN]: https://ctan.org/
-[Raleway]: https://www.fontsquirrel.com/fonts/raleway
-[Lato]: https://www.fontsquirrel.com/fonts/lato
-[license]: LICENSE.md
-[FAQ]: https://github.com/anishathalye/gemini/wiki/FAQ
+The Gemini theme is copyright (c) 2018-2022 Anish Athalye and released under the MIT License; see [LICENSE.md](LICENSE.md). The logos belong to their respective institutions.
