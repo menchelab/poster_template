@@ -14,6 +14,7 @@
 \RequirePackage{changepage}
 \RequirePackage{fontspec}
 \RequirePackage{calc}
+\RequirePackage{pgfcore}
 
 % ====================
 % Fonts
@@ -66,9 +67,20 @@
 
 % Itemize
 
-\setbeamertemplate{itemize item}{\raise0.5ex \hbox{\vrule width 0.5ex height 0.5ex}}
-\setbeamertemplate{itemize subitem}{\raise0.3ex \hbox{\vrule width 0.5ex height 0.5ex}}
-\setbeamertemplate{itemize subsubitem}{\raise0.2ex \hbox{\vrule width 0.5ex height 0.5ex}}
+% filled equilateral triangle with side length #1, in the current color
+\newcommand{\gemini@triangle}[1]{%
+  \begin{pgfpicture}%
+    \pgfpathmoveto{\pgfpoint{0pt}{0pt}}%
+    \pgfpathlineto{\pgfpoint{#1}{0pt}}%
+    \pgfpathlineto{\pgfpoint{0.5*#1}{0.866*#1}}%
+    \pgfpathclose
+    \pgfusepath{fill}%
+  \end{pgfpicture}%
+}
+
+\setbeamertemplate{itemize item}{\raise0.2ex\hbox{\gemini@triangle{0.8ex}}}
+\setbeamertemplate{itemize subitem}{\raise0.2ex\hbox{\gemini@triangle{0.7ex}}}
+\setbeamertemplate{itemize subsubitem}{\raise0.2ex\hbox{\gemini@triangle{0.7ex}}}
 
 % Enumerate
 
@@ -159,7 +171,7 @@
 % Block
 \setbeamertemplate{block begin}
 {
-  \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block title}
+  \begin{beamercolorbox}[colsep*=0ex,dp=2ex,left]{block title}
     \vskip0pt
     \usebeamerfont{block title}\insertblocktitle
     \vskip-1.25ex
@@ -183,7 +195,7 @@
 % Alert Block
 \setbeamertemplate{block alerted begin}
 {
-  \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block alerted title}
+  \begin{beamercolorbox}[colsep*=0ex,dp=2ex,left,leftskip=1ex]{block alerted title}
     \vskip0.5ex%0pt
     \usebeamerfont{block title}\insertblocktitle
     \vskip0ex%1.25ex
@@ -210,7 +222,7 @@
 % Example Block
 \setbeamertemplate{block example begin}
 {
-  \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block example title}
+  \begin{beamercolorbox}[colsep*=0ex,dp=2ex,left,leftskip=1ex]{block example title}
     \vskip0.5ex%0pt
     \usebeamerfont{block title}\insertblocktitle
     \vskip0ex%-1.25ex
