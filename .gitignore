@@ -301,6 +301,8 @@ TSWLatexianTemp*
 #*Notes.bib
 # the built poster; PDFs in subfolders (figures, logos) stay tracked
 /*.pdf
+# PDFs exported next to the Inkscape templates
+inkscape/*.pdf
 .idea/
 out/
 
