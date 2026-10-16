@@ -457,67 +457,67 @@
       <rect id="rule-abstract" x="29.725" y="183.82" width="356.7" height="0.25" style="fill:#004a99" />
       <rect id="frame-abstract" x="29.725" y="189.84" width="356.7" height="11.54" style="fill:none;stroke:none" />
       <text id="text-abstract" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:8.744px;line-height:1.2058;fill:#001242;text-align:start;white-space:pre-wrap;shape-inside:url(#frame-abstract)">Some block contents, followed by a diagram, followed by a dummy paragraph.</text>
-      <g id="figure-abstract">
-        <line x1="96.325" y1="270.06" x2="118.825" y2="280.56" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="96.325" y1="270.06" x2="112.825" y2="249.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="118.825" y1="280.56" x2="139.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="112.825" y1="249.06" x2="139.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="112.825" y1="249.06" x2="100.825" y2="231.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="100.825" y1="231.06" x2="132.325" y2="225.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="132.325" y1="225.06" x2="139.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="139.825" y1="261.06" x2="157.825" y2="279.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="118.825" y1="280.56" x2="157.825" y2="279.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="157.825" y1="279.06" x2="235.825" y2="277.56" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="235.825" y1="277.56" x2="283.825" y2="276.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="283.825" y1="276.06" x2="310.825" y2="258.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="310.825" y1="258.06" x2="295.825" y2="228.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="295.825" y1="228.06" x2="319.825" y2="216.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="295.825" y1="228.06" x2="262.825" y2="213.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="262.825" y1="213.06" x2="319.825" y2="216.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="132.325" y1="225.06" x2="178.825" y2="210.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="283.825" y1="276.06" x2="295.825" y2="228.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="139.825" y1="261.06" x2="187.825" y2="231.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="157.825" y1="279.06" x2="193.825" y2="255.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="235.825" y1="277.56" x2="244.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="262.825" y1="213.06" x2="247.825" y2="225.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="178.825" y1="210.06" x2="226.825" y2="216.06" style="stroke:#b9aebb;stroke-width:0.7" />
-        <line x1="193.825" y1="255.06" x2="211.825" y2="234.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="193.825" y1="255.06" x2="217.825" y2="264.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="211.825" y1="234.06" x2="232.825" y2="243.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="232.825" y1="243.06" x2="217.825" y2="264.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="211.825" y1="234.06" x2="187.825" y2="231.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="187.825" y1="231.06" x2="193.825" y2="255.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="232.825" y1="243.06" x2="247.825" y2="225.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="247.825" y1="225.06" x2="226.825" y2="216.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="226.825" y1="216.06" x2="211.825" y2="234.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="232.825" y1="243.06" x2="244.825" y2="261.06" style="stroke:#004a99;stroke-width:1.41" />
-        <line x1="244.825" y1="261.06" x2="217.825" y2="264.06" style="stroke:#004a99;stroke-width:1.41" />
-        <circle cx="96.325" cy="270.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="118.825" cy="280.56" r="3.3" style="fill:#b9aebb" />
-        <circle cx="112.825" cy="249.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="139.825" cy="261.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="100.825" cy="231.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="132.325" cy="225.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="157.825" cy="279.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="178.825" cy="210.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="235.825" cy="277.56" r="3.3" style="fill:#b9aebb" />
-        <circle cx="283.825" cy="276.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="310.825" cy="258.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="295.825" cy="228.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="319.825" cy="216.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="262.825" cy="213.06" r="3.3" style="fill:#b9aebb" />
-        <circle cx="193.825" cy="255.06" r="4.2" style="fill:#004a99" />
-        <circle cx="211.825" cy="234.06" r="4.2" style="fill:#004a99" />
-        <circle cx="232.825" cy="243.06" r="4.2" style="fill:#004a99" />
-        <circle cx="217.825" cy="264.06" r="4.2" style="fill:#004a99" />
-        <circle cx="247.825" cy="225.06" r="4.2" style="fill:#004a99" />
-        <circle cx="187.825" cy="231.06" r="4.2" style="fill:#004a99" />
-        <circle cx="244.825" cy="261.06" r="4.2" style="fill:#004a99" />
-        <circle cx="226.825" cy="216.06" r="4.2" style="fill:#004a99" />
-      </g>
       <text id="caption-abstract" x="208.075" y="302.03" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:7.289px;line-height:1.2054;fill:#001242;text-anchor:middle"><tspan style="fill:#004a99">Figure 1.</tspan> A disease module (blue) within the protein interaction network.</text>
       <rect id="frame-abstract-tail" x="29.725" y="316.48" width="356.7" height="22.084" style="fill:none;stroke:none" />
       <text id="text-abstract-tail" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:8.744px;line-height:1.2058;fill:#001242;text-align:start;white-space:pre-wrap;shape-inside:url(#frame-abstract-tail)">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies eget libero ac ullamcorper. Integer et euismod ante.</text>
+    </g>
+    <g id="figure-abstract">
+      <line x1="96.325" y1="270.06" x2="118.825" y2="280.56" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="96.325" y1="270.06" x2="112.825" y2="249.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="118.825" y1="280.56" x2="139.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="112.825" y1="249.06" x2="139.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="112.825" y1="249.06" x2="100.825" y2="231.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="100.825" y1="231.06" x2="132.325" y2="225.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="132.325" y1="225.06" x2="139.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="139.825" y1="261.06" x2="157.825" y2="279.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="118.825" y1="280.56" x2="157.825" y2="279.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="157.825" y1="279.06" x2="235.825" y2="277.56" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="235.825" y1="277.56" x2="283.825" y2="276.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="283.825" y1="276.06" x2="310.825" y2="258.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="310.825" y1="258.06" x2="295.825" y2="228.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="295.825" y1="228.06" x2="319.825" y2="216.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="295.825" y1="228.06" x2="262.825" y2="213.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="262.825" y1="213.06" x2="319.825" y2="216.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="132.325" y1="225.06" x2="178.825" y2="210.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="283.825" y1="276.06" x2="295.825" y2="228.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="139.825" y1="261.06" x2="187.825" y2="231.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="157.825" y1="279.06" x2="193.825" y2="255.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="235.825" y1="277.56" x2="244.825" y2="261.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="262.825" y1="213.06" x2="247.825" y2="225.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="178.825" y1="210.06" x2="226.825" y2="216.06" style="stroke:#b9aebb;stroke-width:0.7" />
+      <line x1="193.825" y1="255.06" x2="211.825" y2="234.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="193.825" y1="255.06" x2="217.825" y2="264.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="211.825" y1="234.06" x2="232.825" y2="243.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="232.825" y1="243.06" x2="217.825" y2="264.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="211.825" y1="234.06" x2="187.825" y2="231.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="187.825" y1="231.06" x2="193.825" y2="255.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="232.825" y1="243.06" x2="247.825" y2="225.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="247.825" y1="225.06" x2="226.825" y2="216.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="226.825" y1="216.06" x2="211.825" y2="234.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="232.825" y1="243.06" x2="244.825" y2="261.06" style="stroke:#004a99;stroke-width:1.41" />
+      <line x1="244.825" y1="261.06" x2="217.825" y2="264.06" style="stroke:#004a99;stroke-width:1.41" />
+      <circle cx="96.325" cy="270.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="118.825" cy="280.56" r="3.3" style="fill:#b9aebb" />
+      <circle cx="112.825" cy="249.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="139.825" cy="261.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="100.825" cy="231.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="132.325" cy="225.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="157.825" cy="279.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="178.825" cy="210.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="235.825" cy="277.56" r="3.3" style="fill:#b9aebb" />
+      <circle cx="283.825" cy="276.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="310.825" cy="258.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="295.825" cy="228.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="319.825" cy="216.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="262.825" cy="213.06" r="3.3" style="fill:#b9aebb" />
+      <circle cx="193.825" cy="255.06" r="4.2" style="fill:#004a99" />
+      <circle cx="211.825" cy="234.06" r="4.2" style="fill:#004a99" />
+      <circle cx="232.825" cy="243.06" r="4.2" style="fill:#004a99" />
+      <circle cx="217.825" cy="264.06" r="4.2" style="fill:#004a99" />
+      <circle cx="247.825" cy="225.06" r="4.2" style="fill:#004a99" />
+      <circle cx="187.825" cy="231.06" r="4.2" style="fill:#004a99" />
+      <circle cx="244.825" cy="261.06" r="4.2" style="fill:#004a99" />
+      <circle cx="226.825" cy="216.06" r="4.2" style="fill:#004a99" />
     </g>
     <g id="block-list">
       <text id="title-list" x="29.725" y="359.564" xml:space="preserve" style="font-family:'Source Serif Pro';font-weight:600;font-size:10.495px;line-height:1.2391;fill:#001242">A block containing a list</text>
@@ -541,9 +541,11 @@ Curabitur eu libero vehicula, cursus est fringilla, luctus est. Morbi consectetu
       <rect id="rule-results" x="416.15" y="260.251" width="356.7" height="0.25" style="fill:#004a99" />
       <rect id="frame-results" x="416.15" y="266.271" width="356.7" height="22.084" style="fill:none;stroke:none" />
       <text id="text-results" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:8.744px;line-height:1.2058;fill:#001242;text-align:start;white-space:pre-wrap;shape-inside:url(#frame-results)">Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum vestibulum, lectus nisi pretium nibh.</text>
-      <rect id="placeholder-results" x="416.15" y="293.735" width="356.7" height="150" style="fill:none;stroke:#b9aebb;stroke-width:0.5;stroke-dasharray:4,3" />
-      <text id="placeholder-text-results" x="594.5" y="371.287" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:7.289px;line-height:1.2054;fill:#001242;text-anchor:middle">Place your figure here: File ▸ Import (Ctrl+I)</text>
       <text id="caption-results" x="594.5" y="461.905" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:7.289px;line-height:1.2054;fill:#001242;text-anchor:middle"><tspan style="fill:#004a99">Figure 2.</tspan> Describe your figure here.</text>
+    </g>
+    <g id="placeholder-results">
+      <rect id="placeholder-frame-results" x="416.15" y="293.735" width="356.7" height="150" style="fill:none;stroke:#b9aebb;stroke-width:0.5;stroke-dasharray:4,3" />
+      <text id="placeholder-text-results" x="594.5" y="371.287" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:7.289px;line-height:1.2054;fill:#001242;text-anchor:middle">Place your figure here: File ▸ Import (Ctrl+I)</text>
     </g>
     <g id="block-example">
       <rect id="bar-example" x="802.575" y="167.39" width="356.7" height="24.3" style="fill:#d5ced6" />

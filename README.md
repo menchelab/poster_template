@@ -64,16 +64,16 @@ The `inkscape/` folder holds the same poster as editable Inkscape templates:
 
 **Editing blocks.** Every block is a group made of a title, a blue rule or colored bar, and a text frame.
 - Double-click the text to edit it; it wraps inside its frame.
-- To make a block taller or shorter, select its text with the Text tool and drag the frame handle (the small square at the frame's lower right corner). In alert and example blocks, the tinted background is the frame.
-- A **red** frame handle means the text doesn't fit and the rest is hidden. Make the frame taller or shorten the text.
+- To make a block taller or shorter, don't drag the arrows around a selected block: that stretches the whole block, text included. Instead, pick the Text tool (T), click into the block's text, and drag the small square handle at the lower right corner of its frame; the text rewraps. In alert and example blocks this also resizes the tinted background, which is the frame.
+- A red frame outline means the text doesn't fit and the rest is hidden. Make the frame taller or shorten the text.
 - To add a block, select an existing one, press Ctrl+D to duplicate it, and move the copy. The copy gets its own frame.
-- Blue guides mark the columns, and objects snap to them.
+- Blue guides mark the columns. Objects snap to them only when snapping is on: click the magnet button at the top right of the window (or press %). If objects still don't snap to the guides, open the snapping menu next to the magnet, switch to Advanced mode, and tick Guides.
 
 **Bullets.** List lines start with a blue ▴. To add one, copy an existing bullet line, or type it in the Text tool with Ctrl+U, `25b4`, Enter, and color it with the `lbiblue` swatch.
 
 **Figures.** Use File ▸ Import (Ctrl+I) to add PNG, JPG, SVG or PDF figures, place them in a column, and delete the dashed placeholder. SVG and PDF figures stay sharp at poster size.
 
-**Colors.** The LBI colors are in the Swatches panel: `lbiblue`, `lbimauve`, `lbinavy`, and the light tints the blocks use.
+**Colors.** The LBI colors (`lbiblue`, `lbimauve`, `lbinavy`, and the light tints the blocks use) are stored in each template as document swatches. They don't appear in the color bar at the bottom of the window until you choose "Document swatches" in that bar's palette menu. You can also open Object ▸ Swatches (Ctrl+Shift+W) and choose "Document swatches" there.
 
 **Missing fonts.** Without the fonts installed, Inkscape silently uses another font, and the font name in the Text toolbar appears struck through in red. Install the fonts (step 1) and reopen the file.
 

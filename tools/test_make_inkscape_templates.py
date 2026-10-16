@@ -180,6 +180,19 @@ class TemplateTests(unittest.TestCase):
                         with self.subTest(variant=variant.name, text=text.get("id")):
                             self.assertIn(target.group(1), frames)
 
+    def test_figures_are_standalone(self):
+        # GUI check: clicking the placeholder selected the whole block, so Delete removed the block;
+        # figures must be their own objects in the Content layer, not parts of a block group
+        for variant in gen.VARIANTS:
+            _, root = parse(variant.name)
+            content = by_id(root, "layer-content")
+            children = {el.get("id") for el in content}
+            with self.subTest(variant=variant.name):
+                self.assertIn("figure-abstract", children)
+                self.assertIn("placeholder-results", children)
+                for block in (g for g in content if (g.get("id") or "").startswith("block-")):
+                    self.assertFalse([el for el in block.iter() if (el.get("id") or "").startswith(("figure-", "placeholder-"))])
+
     def test_flowed_text_markup(self):
         # probe finding: paragraphs need pre-wrap newlines; sodipodi:role lines run together
         for variant in gen.VARIANTS:
@@ -194,7 +207,7 @@ class TemplateTests(unittest.TestCase):
         for variant in gen.VARIANTS:
             _, root = parse(variant.name)
             limit = float(by_id(root, "footer-rule").get("y")) - 30 * variant.scale
-            for block in (g for g in root.iter(SVG + "g") if (g.get("id") or "").startswith("block-")):
+            for block in by_id(root, "layer-content"):
                 bottoms = [float(r.get("y")) + float(r.get("height")) for r in block.iter(SVG + "rect")]
                 bottoms += [float(c.get("cy")) + float(c.get("r")) for c in block.iter(SVG + "circle")]
                 bottoms += [float(t.get("y")) for t in block.iter(SVG + "text") if t.get("y")]

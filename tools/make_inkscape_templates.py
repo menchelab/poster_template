@@ -550,15 +550,18 @@ class _Builder:
         kind = "references" if key == "references" else "body"
         bottom, last_baseline = self.frame(group, key, block.paragraphs, x, frame_y, width, kind, fill)
         if block.figure:
+            # figures are standalone objects in the Content layer, so a click selects just the
+            # figure and Delete removes only it (inside the block group it removed the whole block)
             figure_top = last_baseline + FIGURE_BELOW_BASELINE * s
             if block.figure == "network":
-                figure_bottom = self.network(group, key, x, figure_top)
+                figure_bottom = self.network(content, key, x, figure_top)
             else:
                 figure_bottom = figure_top + PLACEHOLDER_HEIGHT * s
-                self.rect(group, f"placeholder-{key}", x, figure_top, width, PLACEHOLDER_HEIGHT * s,
+                holder = _el(content, "g", {"id": f"placeholder-{key}"})
+                self.rect(holder, f"placeholder-frame-{key}", x, figure_top, width, PLACEHOLDER_HEIGHT * s,
                           f"fill:none;stroke:{self.mauve};stroke-width:{fmt(0.5 * s)};"
                           f"stroke-dasharray:{fmt(4 * s)},{fmt(3 * s)}")
-                self.text(group, f"placeholder-text-{key}", x + width / 2,
+                self.text(holder, f"placeholder-text-{key}", x + width / 2,
                           figure_top + PLACEHOLDER_HEIGHT * s / 2 + 0.35 * self.size("caption"), "caption", self.navy,
                           [(PLACEHOLDER_TEXT, "regular")], extra=";text-anchor:middle")
             caption_y = figure_bottom + CAPTION_BELOW_FIGURE * s
