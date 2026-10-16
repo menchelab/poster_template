@@ -443,7 +443,7 @@
     </g>
   </g>
   <g id="layer-text" inkscape:groupmode="layer" inkscape:label="Header &amp; footer text">
-    <text id="title" x="279.49" y="56.075" xml:space="preserve" style="font-family:'Source Serif Pro';font-weight:600;font-size:21.762px;line-height:1.2435;fill:#001242">Disease modules in the human interactome</text>
+    <text id="title" x="279.49" y="48.715" xml:space="preserve" style="font-family:'Source Serif Pro';font-weight:600;font-size:21.762px;line-height:1.2435;fill:#001242">Disease modules in the human interactome</text>
     <text id="authors" x="279.49" y="65.725" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:12.593px;line-height:1.2559;fill:#001242">Jane Doe<tspan style="font-size:65%;baseline-shift:super">1</tspan>  John Roe<tspan style="font-size:65%;baseline-shift:super">1 2</tspan>  Alex Poe<tspan style="font-size:65%;baseline-shift:super">2</tspan></text>
     <text id="institute-1" x="279.49" y="78.255" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:8.744px;line-height:1.2058;fill:#334168"><tspan style="font-size:65%;baseline-shift:super">1</tspan>Ludwig Boltzmann Institute for Network Medicine at the University of Vienna, Vienna, Austria</text>
     <text id="institute-2" x="279.49" y="97.565" xml:space="preserve" style="font-family:'Source Sans Pro';font-size:8.744px;line-height:1.2058;fill:#334168"><tspan style="font-size:65%;baseline-shift:super">2</tspan>CeMM Research Center for Molecular Medicine of the Austrian Academy of Sciences, Vienna, Austria</text>

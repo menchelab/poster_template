@@ -8,6 +8,8 @@ Colors come from beamercolorthemelbi.sty, logos from logos/svg/, and font
 metrics from the bundled fonts in inkscape/fonts/, so both editions share one
 source for each.
 """
+from __future__ import annotations  # PEP 604 annotations on Python 3.9 (macOS system python3)
+
 import argparse
 import re
 import struct
@@ -230,7 +232,7 @@ LOGO_BOXES = {
     "cemm": (0, 0, 700.16, 385.89),
 }
 LOGO_HEIGHT = 90.0
-HEADER_BASELINES = (35.05, 44.70, 57.23, 76.54)  # title, authors, institute 1, institute 2 (below the logo top)
+HEADER_BASELINES = (27.69, 44.70, 57.23, 76.54)  # title, authors, institute 1, institute 2 (below the logo top)
 RULE_HEIGHT = 2.03
 FOOTER_RULE_FROM_BOTTOM = 63.95
 FOOTER_BASELINE_FROM_BOTTOM = 28.56

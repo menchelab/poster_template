@@ -154,6 +154,11 @@ class TemplateTests(unittest.TestCase):
         self.assertAlmostEqual(float(rule.get("y")), 132.05, delta=0.01)
         self.assertAlmostEqual(float(rule.get("height")), 2.03, delta=0.001)
 
+    def test_title_baseline_matches_latex(self):
+        # LaTeX A0: title baseline 48.72 mm (bottom of "Dise" at 300 dpi, 49.02 incl. round-letter overshoot)
+        _, root = parse("a0-portrait")
+        self.assertAlmostEqual(float(by_id(root, "title").get("y")), 48.72, delta=0.35)
+
     def test_footer_geometry(self):
         _, root = parse("a0-portrait")
         self.assertAlmostEqual(float(by_id(root, "footer-rule").get("y")), 1125.05, delta=0.01)
