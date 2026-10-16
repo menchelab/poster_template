@@ -303,3 +303,6 @@ TSWLatexianTemp*
 /*.pdf
 .idea/
 out/
+
+# Python bytecode from running the generator tests
+__pycache__/
