@@ -308,3 +308,7 @@ out/
 
 # Python bytecode from running the generator tests
 __pycache__/
+
+
+# MacOS 
+*.DS_Score
