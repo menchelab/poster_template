@@ -24,6 +24,7 @@ SVG_NS = "http://www.w3.org/2000/svg"
 INK_NS = "http://www.inkscape.org/namespaces/inkscape"
 SODI_NS = "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
 OSB_NS = "http://www.openswatchbook.org/uri/2009/osb"
+LOCKED = f"{{{SODI_NS}}}insensitive"   # Inkscape's lock, on a layer or on a single object
 for _prefix, _uri in (("", SVG_NS), ("inkscape", INK_NS), ("sodipodi", SODI_NS), ("osb", OSB_NS)):
     ET.register_namespace(_prefix, _uri)
 
@@ -234,11 +235,22 @@ LOGO_BOXES = {
 LOGO_HEIGHT = 90.0
 HEADER_BASELINES = (27.69, 44.70, 57.23, 76.54)  # title, authors, institute 1, institute 2 (below the logo top)
 RULE_HEIGHT = 2.03
-FOOTER_RULE_FROM_BOTTOM = 63.95
-FOOTER_BASELINE_FROM_BOTTOM = 28.56
 FOOTER_LOGOS_BOTTOM_FROM_BOTTOM = 12.81
-FOOTER_LOGOS = (("univie", 28.0), ("vbc", 36.0), ("cemm", 32.0))
+FOOTER_LOGOS = (("univie", 28.0),)   # as in poster_template.tex; logos/svg/ also has vbc and cemm
 FOOTER_LOGO_GAP = 17.0
+FOOTER_RULE_ABOVE_LOGOS = 15.14      # rule top above the tallest logo's top
+FOOTER_BASELINE_BELOW_LOGOS_MIDDLE = 2.25
+
+
+def footer_from_bottom(logos):
+    """(rule top, footer text baseline) above the page bottom. The LaTeX footer centers its text on the logos
+    and puts the rule 3ex above the tallest one, so both move with the tallest logo."""
+    tallest = max(height for _, height in logos)
+    return (FOOTER_LOGOS_BOTTOM_FROM_BOTTOM + tallest + FOOTER_RULE_ABOVE_LOGOS,
+            FOOTER_LOGOS_BOTTOM_FROM_BOTTOM + tallest / 2 - FOOTER_BASELINE_BELOW_LOGOS_MIDDLE)
+
+
+FOOTER_RULE_FROM_BOTTOM, FOOTER_BASELINE_FROM_BOTTOM = footer_from_bottom(FOOTER_LOGOS)
 
 FIRST_TOP_BELOW_RULE = 15.91   # first block top below the header rule (title baseline 25.91 - 10.0)
 PLAIN_BASELINE_BELOW_TOP = 10.0
@@ -464,13 +476,11 @@ class _Builder:
                                                      f"{{{OSB_NS}}}paint": "solid", f"{{{INK_NS}}}label": name})
             _el(gradient, "stop", {"id": f"{swatch_id}-stop", "offset": "0", "style": f"stop-color:{color};stop-opacity:1"})
 
-        def layer(layer_id, label, locked=False):
-            attrs = {"id": layer_id, f"{{{INK_NS}}}groupmode": "layer", f"{{{INK_NS}}}label": label}
-            if locked:
-                attrs[f"{{{SODI_NS}}}insensitive"] = "true"
-            return _el(root, "g", attrs)
+        def layer(layer_id, label):
+            return _el(root, "g", {"id": layer_id, f"{{{INK_NS}}}groupmode": "layer", f"{{{INK_NS}}}label": label})
 
-        branding = layer("layer-branding", "Branding", locked=True)
+        # The Branding layer stays unlocked so users can move or resize the logos; only the rules are locked.
+        branding = layer("layer-branding", "Branding")
         texts = layer("layer-text", "Header & footer text")
         content = layer("layer-content", "Content")
         self.header(branding, texts)
@@ -489,7 +499,7 @@ class _Builder:
                                   LOGO_HEIGHT * s, LOGO_BOXES["lbi-netmed"])
         branding.append(logo)
         self.rect(branding, "header-rule", 0, sep + LOGO_HEIGHT * s + sep, self.v.width, RULE_HEIGHT * s,
-                  f"fill:{self.blue}")
+                  f"fill:{self.blue}").set(LOCKED, "true")
         x = sep + width + sep
         title, authors, inst1, inst2 = (sep + b * s for b in HEADER_BASELINES)
         self.text(texts, "title", x, title, "title", self.navy, [(TITLE, "regular")], serif=True)
@@ -500,7 +510,7 @@ class _Builder:
     def footer(self, branding, texts):
         s, sep, v = self.s, self.sep, self.v
         self.rect(branding, "footer-rule", 0, v.height - FOOTER_RULE_FROM_BOTTOM * s, v.width, RULE_HEIGHT * s,
-                  f"fill:{self.blue}")
+                  f"fill:{self.blue}").set(LOCKED, "true")
         self.text(texts, "footer", sep, v.height - FOOTER_BASELINE_FROM_BOTTOM * s, "footer", self.navy,
                   [(FOOTER, "regular")])
         bottom = v.height - FOOTER_LOGOS_BOTTOM_FROM_BOTTOM * s

@@ -124,7 +124,24 @@ class TemplateTests(unittest.TestCase):
         _, root = parse("a0-portrait")
         layers = [g for g in root if g.get(INK + "groupmode") == "layer"]
         self.assertEqual([g.get(INK + "label") for g in layers], ["Branding", "Header & footer text", "Content"])
-        self.assertEqual([g.get(SODI + "insensitive") for g in layers], ["true", None, None])
+        self.assertEqual([g.get(SODI + "insensitive") for g in layers], [None, None, None])
+
+    def test_logos_movable_rules_locked(self):
+        # users may move or resize the logos later; the rules stay put
+        for variant in gen.VARIANTS:
+            _, root = parse(variant.name)
+            parent = {child: el for el in root.iter() for child in el}
+
+            def locked(el):
+                while el is not None:
+                    if el.get(SODI + "insensitive") == "true":
+                        return True
+                    el = parent.get(el)
+                return False
+            for element_id, want in (("logo-lbi", False), ("logo-univie", False), ("header-rule", True),
+                                     ("footer-rule", True)):
+                with self.subTest(variant=variant.name, element=element_id):
+                    self.assertEqual(locked(by_id(root, element_id)), want)
 
     def test_swatches(self):
         _, root = parse("a0-portrait")
@@ -160,14 +177,23 @@ class TemplateTests(unittest.TestCase):
         self.assertAlmostEqual(float(by_id(root, "title").get("y")), 48.72, delta=0.35)
 
     def test_footer_geometry(self):
+        # LaTeX A0 with the Uni Wien logo alone, at 600 dpi: rule top 1133.01, footer text baseline 1164.46
         _, root = parse("a0-portrait")
-        self.assertAlmostEqual(float(by_id(root, "footer-rule").get("y")), 1125.05, delta=0.01)
-        boxes = [logo_box(by_id(root, f"logo-{n}")) for n in ("univie", "vbc", "cemm")]
-        self.assertAlmostEqual(boxes[-1][2], 819.975, delta=0.01)
-        for box in boxes:
-            self.assertAlmostEqual(box[3], 1176.19, delta=0.01)
-        for a, b in zip(boxes, boxes[1:]):
-            self.assertAlmostEqual(b[0] - a[2], 17.0, delta=0.01)
+        self.assertAlmostEqual(float(by_id(root, "footer-rule").get("y")), 1133.01, delta=0.1)
+        self.assertAlmostEqual(float(by_id(root, "footer").get("y")), 1164.46, delta=0.1)
+        logos = [el.get("id") for el in by_id(root, "layer-branding") if el.get("id").startswith("logo-")]
+        self.assertEqual(logos, ["logo-lbi", "logo-univie"])         # Uni Wien only, as in the LaTeX footer
+        left, top, right, bottom = logo_box(by_id(root, "logo-univie"))
+        self.assertAlmostEqual(right, 819.975, delta=0.01)
+        self.assertAlmostEqual(bottom, 1176.19, delta=0.01)
+        self.assertAlmostEqual(bottom - top, 28.0, delta=0.01)      # \includegraphics[height=2.8cm]
+
+    def test_footer_follows_the_tallest_logo(self):
+        # LaTeX A0 with the three partner logos (before e9cb04a; VBC is 3.6 cm tall): rule top 63.95 mm and
+        # footer text baseline 28.56 mm above the page bottom
+        rule, baseline = gen.footer_from_bottom((("univie", 28.0), ("vbc", 36.0), ("cemm", 32.0)))
+        self.assertAlmostEqual(rule, 63.95, delta=0.01)
+        self.assertAlmostEqual(baseline, 28.56, delta=0.01)
 
     def test_every_frame_inside_its_block_group(self):
         for variant in gen.VARIANTS:

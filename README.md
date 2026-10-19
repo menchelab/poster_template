@@ -58,7 +58,9 @@ The `inkscape/` folder holds the same poster as editable Inkscape templates:
 4. **Export it** with File ▸ Save a Copy ▸ PDF, with "Embed fonts" selected, and print that PDF.
 
 **Layers.** The template has three layers (Layer ▸ Layers and Objects):
-- `Branding` holds the LBI logo, the blue header and footer rules, and the partner logos. It is locked so nothing moves by accident; unlock it in the Layers panel if you need to.
+- `Branding` holds the LBI logo, the blue header and footer rules, and the University of Vienna logo in the footer.
+  - **Logos:** you can move, resize or delete them. To keep a logo's proportions while resizing, hold Ctrl as you drag a corner arrow. The Vienna BioCenter and CeMM logos are in `logos/svg/`; add them with File ▸ Import.
+  - **Rules:** each rule is locked so it doesn't move by accident. To move one, for example the header rule below a taller header, unlock it with the lock icon next to it in the Layers and Objects panel.
 - `Header & footer text` holds the title, authors, affiliations and contact line.
 - `Content` holds the blocks and figures.
 
@@ -98,6 +100,7 @@ inkscape --export-type=pdf --export-area-drawing --export-filename=<out>.pdf <in
 
 - `python3 tools/make_inkscape_templates.py` regenerates the three templates in `inkscape/` from `beamercolorthemelbi.sty`, `logos/svg/`, and the fonts in `inkscape/fonts/`. Unchanged inputs give byte-identical output; commit the regenerated files.
 - `python3 -m unittest discover -s tools` runs the generator's tests.
+- The Inkscape footer shows the logos listed in `FOOTER_LOGOS` in `tools/make_inkscape_templates.py`, and its rule and text move with the tallest one, as in LaTeX. When you change `\footerlogos` in `poster_template.tex`, update `FOOTER_LOGOS` to match and regenerate the templates.
 - To replace a logo:
   1. Put the new SVG in `logos/svg/`.
   2. Convert it to the PDF the LaTeX edition uses with the Inkscape command above, e.g. `inkscape --export-type=pdf --export-area-drawing --export-filename=logos/partners/vbc.pdf logos/svg/vbc.svg`.
